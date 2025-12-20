@@ -5,61 +5,36 @@ const footerColumns = [
   {
     sections: [
       {
-        title: "SELL A HOME",
+        title: "NAVIGATION",
         links: [
-          { name: "Request an offer", href: "/request-offer" },
-          { name: "Pricing", href: "/pricing" },
-          { name: "Reviews", href: "/reviews" },
-          { name: "Stories", href: "/stories" },
-        ],
-      },
-      {
-        title: "BUY A HOME",
-        links: [
-          { name: "Buy", href: "/buy" },
-          { name: "Finance", href: "/finance" },
+          { name: "Home", href: "/" },
+          { name: "About Us", href: "/about" },
+          { name: "Recruiters", href: "/recruiters" },
+          { name: "Nurses to Germany", href: "/nurses-to-germany" },
+          { name: "Blog", href: "/blog" },
         ],
       },
     ],
   },
   {
     sections: [
-      {
-        title: "BUY, RENT AND SELL",
-        links: [
-          { name: "Buy and sell properties", href: "/buy-sell" },
-          { name: "Rent home", href: "/rent" },
-          { name: "Builder trade-up", href: "/builder-trade-up" },
-        ],
-      },
-      {
-        title: "TERMS & PRIVACY",
-        links: [
-          { name: "Trust & Safety", href: "/trust-safety" },
-          { name: "Terms of Service", href: "/terms" },
-          { name: "Privacy Policy", href: "/privacy" },
-        ],
-      },
-    ],
-  },
-  {
-    sections: [
-      {
-        title: "ABOUT",
-        links: [
-          { name: "Company", href: "/company" },
-          { name: "How it works", href: "/how-it-works" },
-          { name: "Contact", href: "/contact" },
-          { name: "Investors", href: "/investors" },
-        ],
-      },
       {
         title: "RESOURCES",
         links: [
-          { name: "Blog", href: "/blog" },
-          { name: "Guides", href: "/guides" },
-          { name: "FAQ", href: "/faq" },
-          { name: "Help Center", href: "/help" },
+          { name: "Enquire Now", href: "/#contact" },
+          { name: "Success Stories", href: "/#success-stories" },
+        ],
+      },
+    ],
+  },
+  {
+    sections: [
+      {
+        title: "GET IN TOUCH",
+        links: [
+          { name: "contact@taldo.co", href: "mailto:contact@taldo.co" },
+          { name: "+91 90000 00000", href: "tel:+919000000000" },
+          { name: "123 Taldo HQ, Bengaluru, India", href: "https://maps.google.com/?q=123 Taldo HQ, Bengaluru, India" },
         ],
       },
     ],
@@ -69,7 +44,7 @@ const footerColumns = [
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/profile.php?id=61580703027757#",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -78,27 +53,38 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/taldocareers/",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <rect x="1" y="1" width="22" height="22" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
       </svg>
     ),
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com",
+    name: "YouTube",
+    href: "https://www.youtube.com/@TaldoCareers",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="1" y="5" width="22" height="14" rx="3" ry="3" />
+        <polygon points="10,16 16,12 10,8" fill="currentColor" stroke="none" />
       </svg>
     ),
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/taldocareers/",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -163,7 +149,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4">
           {/* Copyright */}
           <p className="text-xs md:text-sm text-gray-text text-center sm:text-left">
-            ©2021 Estatery. All rights reserved
+            ©2025 Taldo. All rights reserved
           </p>
 
           {/* Social Links */}

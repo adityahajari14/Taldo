@@ -2,17 +2,55 @@
 
 import { useState } from "react";
 
+const indianStates = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+];
+
+const educationOptions = [
+  "BSC Nursing",
+  "MSC Nursing",
+  "GNM",
+  "Post BSC Nursing",
+];
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
-    subject: "",
-    message: "",
+    email: "",
+    state: "",
+    education: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -27,37 +65,25 @@ export default function Contact() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20">
         {/* Title */}
         <h2 className="mb-8 md:mb-10 text-2xl sm:text-3xl md:text-[32px] font-bold text-gray-900 text-center md:text-left">
-          Get in Touch
+          Job Seeker Enquiry
         </h2>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-6">
-          {/* Row 1: Name, Email, Phone */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-12">
-            {/* Name */}
+          {/* Row 1: Name, Phone, Email */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {/* Job Seeker Name */}
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-gray-900">Name</label>
+              <label className="text-sm font-medium text-gray-900">
+                Job Seeker Name <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
                 name="name"
-                placeholder="Rachel Joe"
+                placeholder="Enter full name"
                 value={formData.name}
                 onChange={handleChange}
-                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
-              />
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-gray-900">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Rachel@domain.com"
-                value={formData.email}
-                onChange={handleChange}
+                required
                 className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
               />
             </div>
@@ -65,58 +91,104 @@ export default function Contact() {
             {/* Phone Number */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-900">
-                Phone Number
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
                 name="phone"
-                placeholder="+971...."
+                placeholder="+91 XXXXX XXXXX"
                 value={formData.phone}
                 onChange={handleChange}
+                onFocus={() => {
+                  if (!formData.phone) {
+                    setFormData({ ...formData, phone: "+91 " });
+                  }
+                }}
+                required
+                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
+              />
+            </div>
+
+            {/* Email ID */}
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-medium text-gray-900">
+                Email ID <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
               />
             </div>
           </div>
 
-          {/* Row 2: Subject, Message */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 md:gap-6 lg:gap-12">
-            {/* Subject */}
+          {/* Row 2: State, Education */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {/* State */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-900">
-                Subject
+                State <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
+              <select
+                name="state"
+                value={formData.state}
                 onChange={handleChange}
-                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
-              />
+                required
+                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 focus:border-accent focus:outline-none appearance-none cursor-pointer"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 1rem center",
+                  paddingRight: "3rem",
+                }}
+              >
+                <option value="">Select your state</option>
+                {indianStates.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
             </div>
 
-            {/* Message */}
+            {/* Education */}
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-900">
-                Message
+                Education <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
-                name="message"
-                placeholder="Enter Query"
-                value={formData.message}
+              <select
+                name="education"
+                value={formData.education}
                 onChange={handleChange}
-                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 placeholder:text-gray-500 focus:border-accent focus:outline-none"
-              />
+                required
+                className="h-12 rounded-md border border-gray-300 bg-white px-4 md:px-5 text-base text-gray-900 focus:border-accent focus:outline-none appearance-none cursor-pointer"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 1rem center",
+                  paddingRight: "3rem",
+                }}
+              >
+                <option value="">Select your qualification</option>
+                {educationOptions.map((edu) => (
+                  <option key={edu} value={edu}>
+                    {edu}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="mt-2 md:mt-4 w-full sm:w-fit rounded-full bg-primary px-6 md:px-8 py-3 text-base font-medium text-white transition-all hover:bg-accent"
+            className="mt-2 md:mt-4 w-full sm:w-fit rounded-full bg-primary px-8 md:px-10 py-3 md:py-3.5 text-base font-medium text-white transition-all hover:bg-accent"
           >
-            Send my message
+            Submit Enquiry
           </button>
         </form>
       </div>

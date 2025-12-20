@@ -3,9 +3,6 @@ import WhyGermany from "@/components/home/WhyGermany";
 import StartCareer from "@/components/home/StartCareer";
 import SuccessStories from "@/components/home/SuccessStories";
 import ProgramOverview from "@/components/home/ProgramOverview";
-import Newsletter from "@/components/home/Newsletter";
-import OtherBlogs from "@/components/OtherBlogs";
-import blogs from "@/data/blogs.json";
 
 
 export default function Home() {
@@ -16,8 +13,6 @@ export default function Home() {
       <StartCareer />
       <SuccessStories />
       <ProgramOverview />
-      <Newsletter />
-      <OtherBlogs blogs={blogs} heading="Blogs" />
     </main>
   );
 }
