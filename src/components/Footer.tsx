@@ -105,7 +105,7 @@ export default function Footer() {
           <div className="shrink-0 lg:w-1/5">
             <Link href="/">
               <Image
-                src="/logo.webp"
+                src="/Taldo_Horizontal Logo 1.svg"
                 alt="Taldo"
                 width={104}
                 height={38}

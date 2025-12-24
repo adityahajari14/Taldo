@@ -32,7 +32,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/logo.webp"
+            src="/Taldo_Horizontal Logo 1.svg"
             alt="Taldo"
             width={104}
             height={38}
