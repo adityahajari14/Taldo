@@ -8,14 +8,14 @@ export default function Team() {
         {
             name: "Nirav Devpura",
             image: "/about/nirav-devpura.webp",
-            description: "Nirav brings years of experience building companies with structure, ethics, and long-term value. He oversees candidate strategy, partnerships, and the operational backbone of the program.",
+            description: "Nirav is an MBA from MDI Gurgaon and an engineer from DAU, with 10+ years of experience across Dream11 and KPMG. He leads strategy, partnerships, and operations, and has mentored 50+ students in long-term career development.",
             icon: Linkedin,
             link: "https://www.linkedin.com/in/niravdevpura/"
         },
         {
             name: "Sweta Jain",
             image: "/about/sweta-jain.webp",
-            description: "Sweta is proficient in five international languages and plays a crucial role in linguistic training quality, cultural orientation, and candidate mentorship.",
+            description: "Sweta is a qualified actuary and language expert, proficient in 3 international languages, including Spanish (B2), Korean (Level 3), and German (B1/B2). She has taught 100+ students and leads training quality, cultural orientation, and candidate mentorship.",
             icon: Instagram,
             link: "https://www.instagram.com/multilingual_mahila/"
         }
@@ -33,7 +33,7 @@ export default function Team() {
 
                     {/* Description */}
                     <p className="font-normal text-base sm:text-lg md:text-xl leading-relaxed tracking-tight text-gray-900">
-                        Taldo is led by Nirav Devpura and Sweta Jain, a team that blends global business expertise with deep linguistic and cross-cultural understanding.
+                        Taldo is led by Nirav Devpura and Sweta Jain, bringing together structured business leadership and deep linguistic expertise.
                     </p>
                 </div>
 
@@ -58,7 +58,7 @@ export default function Team() {
                                     <h3 className="font-semibold text-xl md:text-2xl leading-tight tracking-tight text-gray-900">
                                         {member.name}
                                     </h3>
-                                    <p className="font-normal text-base md:text-lg lg:text-xl leading-relaxed tracking-tight text-gray-900">
+                                    <p className="font-normal text-base md:text-lg lg:text-lg leading-relaxed tracking-tight text-gray-900">
                                         {member.description}
                                     </p>
                                     <Icon
@@ -69,9 +69,18 @@ export default function Team() {
 
                                 </div>
                             </div>
+                            
                         )
                     })}
                 </div>
+
+                <div>
+                    {/* Description */}
+                    <p className="font-normal text-base sm:text-lg md:text-xl leading-relaxed tracking-tight text-gray-900 py-3">
+                        Together, they ensure Taldo remains personal, transparent, and focused on successful global careers for nurses.
+                    </p>
+                </div>
+
             </div>
         </section>
     );

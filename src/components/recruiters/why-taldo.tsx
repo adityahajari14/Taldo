@@ -4,27 +4,27 @@ export default function WhyTaldo() {
   const benefits = [
     {
       title: "High-Quality, Pre-Screened Candidates",
-      description: "Access to thoroughly vetted nursing professionals ready for German healthcare standards."
+      // description: "Access to thoroughly vetted nursing professionals ready for German healthcare standards."
     },
     {
       title: "Predictable, Quarterly Talent Pipelines",
-      description: "Consistent supply of qualified candidates delivered on schedule to meet your staffing needs."
+      // description: "Consistent supply of qualified candidates delivered on schedule to meet your staffing needs."
     },
     {
-      title: "Fully Compliant with German Hiring & Migration Norms",
-      description: "Complete adherence to all legal requirements and regulations for international recruitment."
+      title: "Fully compliant with German hiring and migration norms",
+      // description: "Complete adherence to all legal requirements and regulations for international recruitment."
     },
     {
-      title: "Reduction in Dropout Rates",
-      description: "Through comprehensive counselling and mentorship programs ensuring candidate commitment."
+      title: "Reduction in dropout rates through counselling & mentorship",
+      // description: "Through comprehensive counselling and mentorship programs ensuring candidate commitment."
     },
     {
       title: "End-to-End Administrative Support",
-      description: "From documentation to visa processing, we handle all paperwork and bureaucracy."
+      // description: "From documentation to visa processing, we handle all paperwork and bureaucracy."
     },
     {
       title: "Consistent Communication & Structured Reporting",
-      description: "Regular updates and transparent progress tracking throughout the recruitment process."
+      // description: "Regular updates and transparent progress tracking throughout the recruitment process."
     },
   ];
 
@@ -39,6 +39,7 @@ export default function WhyTaldo() {
           <p className="text-base md:text-lg lg:text-xl font-normal leading-relaxed tracking-tight text-gray-text max-w-3xl">
             Your trusted partner for reliable, compliant, and efficient international nurse recruitment
           </p>
+          
         </div>
 
         {/* Benefits Grid */}
@@ -58,11 +59,11 @@ export default function WhyTaldo() {
                   {benefit.title}
                 </p>
               </div>
-              <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 text-center lg:text-left">
+              {/* <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 text-center lg:text-left">
                 <li>
                   {benefit.description}
                 </li>
-              </ul>
+              </ul> */}
             </div>
           ))}
         </div>

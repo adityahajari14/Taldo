@@ -5,11 +5,11 @@ import { useState } from "react";
 const faqs = [
   {
     question: "Who is eligible?",
-    answer: "Indian nurses with a valid nursing degree (GNM, B.Sc Nursing, or equivalent) and relevant work experience are eligible to apply.",
+    answer: "GNM, BSc, Post BSC Nursing & MSC Nursing graduates with valid registration.",
   },
   {
     question: "What salary can I expect?",
-    answer: "€2,300–€2,800 (pre-recognition) and €2,800–€3,500 (post-recognition).",
+    answer: "INR 3 Lakhs / month and additional INR 1500 / hour for overtime",
   },
   {
     question: "Do I need German skills before joining?",
@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     question: "How long does the process take?",
-    answer: "The entire process typically takes 12-18 months, including language training, documentation, and visa processing.",
+    answer: "Around 9–14 months depending on language progress.",
   },
   {
     question: "Is there a job guarantee?",
-    answer: "Yes, we guarantee employer interviews and job placement assistance for all candidates who successfully complete the program.",
+    answer: "Yes, we guarantee employer interviews and job placement assistance for all candidates who successfully complete the program and qualify B2 exam.",
   },
   {
     question: "Can I take my family later?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Is the training online or offline?",
-    answer: "We offer both online and offline training options to suit your convenience and learning preferences.",
+    answer: "We offer both online and offline training options (at select centres) to suit your convenience and learning preferences.",
   },
   {
     question: "What if I fail an exam?",

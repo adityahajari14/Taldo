@@ -4,7 +4,7 @@ import StartCareer from "@/components/home/StartCareer";
 import SuccessStories from "@/components/home/SuccessStories";
 import ProgramOverview from "@/components/home/ProgramOverview";
 import FAQ from "@/components/FAQ";
-import Webinar from "@/components/home/Webinar";
+import Webinar from "@/app/webinar/page";
 
 
 export default function Home() {
@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
       <WhyGermany />
       <StartCareer />
-      <SuccessStories />
       <ProgramOverview />
+      <SuccessStories/>
       <Webinar/>
       <FAQ/>
     </main>
