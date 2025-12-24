@@ -27,9 +27,9 @@ const ProcessCard = ({
   className?: string;
 }) => {
   return (
-    <div className={`flex-1 rounded-2xl border border-[#e9e9e9] bg-[#f3f4ff] px-3 pb-4 pt-3 ${className}`}>
-      <div className="flex flex-col items-center gap-5">
-        <div className="flex h-20 w-20 items-center justify-center rounded-xl border border-[#aeaff1] bg-[#5e72e4] md:h-[5.625rem] md:w-[5.625rem]">
+    <div className={`flex-1 rounded-2xl border border-[#e9e9e9] bg-[#f3f4ff] p-8 ${className}`}>
+      <div className="flex flex-col items-center gap-6">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#aeaff1] bg-[#5e72e4] md:h-16 md:w-16">
           {icon}
         </div>
         <div className="flex flex-col gap-1 text-center">
