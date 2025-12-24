@@ -109,8 +109,9 @@ export default function NursesToGermanyHero() {
           className="object-cover object-top"
           priority
         />
+        <div className="absolute inset-0 bg-black/60"/>
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.20)_0%,#000_87.06%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.20)_0%,#000_150.06%)]" />
       </div>
 
       {/* Content */}

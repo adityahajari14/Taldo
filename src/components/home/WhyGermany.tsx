@@ -127,7 +127,7 @@ export default function WhyGermany() {
                 <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">
                   {benefit.title}
                 </h3>
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                <p className="text-base text-gray-700 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

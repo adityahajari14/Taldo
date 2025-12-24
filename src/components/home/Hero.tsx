@@ -21,7 +21,7 @@ export default function Hero() {
 
             {/* CTA Button */}
             <Link
-              href="/apply"
+              href="#contact"
               className="flex w-fit items-center gap-3 rounded-full bg-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-medium text-gray-900 transition-all hover:bg-white/90 hover:shadow-lg"
             >
               <svg

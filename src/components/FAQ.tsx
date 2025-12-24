@@ -79,7 +79,7 @@ export default function FAQ() {
                   />
                   {/* Question text */}
                   <span
-                    className={`text-left text-sm md:text-base ${selectedIndex === index
+                    className={`text-left text-base md:text-lg ${selectedIndex === index
                       ? "font-medium text-gray-900"
                       : "text-gray-900"
                       }`}

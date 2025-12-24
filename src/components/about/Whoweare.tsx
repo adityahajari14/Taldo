@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function WhoWeAre() {
     return (
         <section className="flex flex-col gap-8 md:gap-12 px-4 sm:px-6 lg:px-20 py-8 md:py-10 w-full max-w-[1400px] mx-auto bg-white">
@@ -22,7 +20,7 @@ export default function WhoWeAre() {
             </div>
 
             {/* Image */}
-            <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-[437px] rounded-xl md:rounded-2xl overflow-hidden">
+            {/* <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-[437px] rounded-xl md:rounded-2xl overflow-hidden">
                 <Image
                     src="/about/who-we-are.webp"
                     alt="German flag with historic building"
@@ -30,7 +28,7 @@ export default function WhoWeAre() {
                     className="object-cover"
                     priority
                 />
-            </div>
+            </div> */}
         </section>
     );
 }
