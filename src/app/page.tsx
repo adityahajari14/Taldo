@@ -5,7 +5,7 @@ import SuccessStories from "@/components/home/SuccessStories";
 import ProgramOverview from "@/components/home/ProgramOverview";
 import FAQ from "@/components/FAQ";
 import Webinar from "@/app/webinar/page";
-
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
       <SuccessStories/>
       <Webinar/>
       <FAQ/>
+      <Testimonials/>
     </main>
   );
 }
