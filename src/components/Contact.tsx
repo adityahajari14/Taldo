@@ -185,12 +185,15 @@ export default function Contact() {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="mt-2 md:mt-4 w-full sm:w-fit rounded-full bg-primary px-8 md:px-10 py-3 md:py-3.5 text-base font-medium text-white transition-all hover:bg-accent"
-          >
-            Submit Enquiry
-          </button>
+          <div className="flex justify-center mt-2 md:mt-4">
+  <button
+    type="submit"
+    className="w-full sm:w-fit rounded-full bg-white px-8 md:px-10 py-3 md:py-3.5 text-base font-medium text-primary transition-all hover:bg-gray-100"
+  >
+    Submit
+  </button>
+</div>
+
         </form>
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function ProgramIncludes() {
                                 German Language Training (A1–B2)
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>Live classes by experienced and Certified trainers</li>
                             <li>Smaller batch sizes of 10 candidates for better progress</li>
                         </ul>
@@ -70,7 +70,7 @@ export default function ProgramIncludes() {
                                 Nursing Skill Alignment
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>
                                 Training modules aligned with German clinical expectations
                             </li>
@@ -99,7 +99,7 @@ export default function ProgramIncludes() {
                                 Documentation & Visa Support
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>
                                 End-to-end visa and recognition process handling
                             </li>
@@ -128,7 +128,7 @@ export default function ProgramIncludes() {
                                 Guaranteed Employer Interviews
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>
                                 Guaranteed interviews with verified German healthcare employers
                             </li>
@@ -157,7 +157,7 @@ export default function ProgramIncludes() {
                                 Cultural & Workplace Readiness
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                       <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>
                                 German workplace culture, communication, and professional norms
                             </li>
@@ -186,7 +186,7 @@ export default function ProgramIncludes() {
                                 Post-Arrival Support
                             </p>
                         </div>
-                        <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 lg:pl-6 lg:list-disc text-center lg:text-left">
+                       <ul className="text-sm md:text-base lg:text-lg font-normal leading-relaxed tracking-tight text-gray-900 pl-6 list-disc text-left">
                             <li>
                                 Support with housing, registration, banking, and essentials
                             </li>
