@@ -6,6 +6,7 @@ import ProgramOverview from "@/components/home/ProgramOverview";
 import FAQ from "@/components/FAQ";
 import Webinar from "@/app/webinar/page";
 import Testimonials from "@/components/Testimonials";
+import UpcomingWebinars from "@/components/webinar/UpcomingWebinars";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProgramOverview />
       <Testimonials/>
       <SuccessStories/>
+      <UpcomingWebinars/>
       <FAQ/>
       {/* <Webinar/> */}
     </main>

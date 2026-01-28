@@ -1,4 +1,5 @@
 import YouTubeShorts from "@/components/webinar/YouTubeShorts";
+import UpcomingWebinars from "@/components/webinar/UpcomingWebinars";
 
 async function getWebinars() {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
@@ -30,6 +31,8 @@ export default async function Webinar() {
 
             {/* YouTube Shorts Component */}
             <YouTubeShorts webinars={webinars} />
+            {/* Upcoming Webinars Component */}
+            <UpcomingWebinars />
         </section>
     )
 }
