@@ -98,18 +98,18 @@ export default function WebinarForm({ initialData, webinarId, mode }: WebinarFor
                 )}
 
                 {/* Actions */}
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-6 border-t border-gray-200">
                     <button
                         type="submit"
                         disabled={saving || !videoId}
-                        className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-accent/20"
+                        className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-accent/20"
                     >
                         {saving ? 'Saving...' : mode === 'create' ? 'Add Video' : 'Save Changes'}
                     </button>
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="text-gray-600 hover:text-gray-900 font-semibold px-6 py-3"
+                        className="w-full sm:w-auto text-gray-600 hover:text-gray-900 font-semibold px-6 py-3 text-center"
                     >
                         Cancel
                     </button>

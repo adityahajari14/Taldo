@@ -49,7 +49,7 @@ export default function FAQ() {
   const displayedFaqs = showAll ? faqs : faqs.slice(0, 5);
 
   return (
-    <section className="w-full bg-white py-12 md:py-16 lg:py-20">
+    <section className="w-full bg-white pb-12 md:pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20 flex flex-col items-center">
         {/* Title */}
         <h2 className="mb-8 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-gray-900 text-center">
@@ -144,34 +144,34 @@ export default function FAQ() {
 
           {/* Answer Panel */}
           <AnimatePresence mode="popLayout">
-  {selectedIndex !== null && (
-    <motion.div
-      layout
-      key="answer-panel"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{
-        opacity: { duration: 0.2 },
-        layout: {
-          duration: 0.45,
-          ease: [0.25, 0.1, 0.25, 1],
-        },
-      }}
-      className="hidden lg:block h-fit w-full lg:w-1/2 rounded-xl md:rounded-2xl bg-card-bg p-6 md:p-8 lg:p-10 shadow-sm text-center"
-    >
-      <h3 className="mb-4 md:mb-5 text-lg md:text-xl font-semibold text-gray-900">
-        {faqs[selectedIndex].question}
-      </h3>
-      <p className="text-sm md:text-base leading-relaxed text-gray-900">
-        {faqs[selectedIndex].answer}
-      </p>
-    </motion.div>
-  )}
-</AnimatePresence>
+            {selectedIndex !== null && (
+              <motion.div
+                layout
+                key="answer-panel"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  opacity: { duration: 0.2 },
+                  layout: {
+                    duration: 0.45,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  },
+                }}
+                className="hidden lg:block h-fit w-full lg:w-1/2 rounded-xl md:rounded-2xl bg-card-bg p-6 md:p-8 lg:p-10 shadow-sm text-center"
+              >
+                <h3 className="mb-4 md:mb-5 text-lg md:text-xl font-semibold text-gray-900">
+                  {faqs[selectedIndex].question}
+                </h3>
+                <p className="text-sm md:text-base leading-relaxed text-gray-900">
+                  {faqs[selectedIndex].answer}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
     </section >
   );
 }

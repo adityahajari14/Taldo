@@ -75,16 +75,16 @@ export default function BlogsManagementPage() {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Blogs</h1>
-                    <p className="text-gray-600">Manage your blog posts</p>
+                    <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Blogs</h1>
+                    <p className="text-sm md:text-base text-gray-600">Manage your blog posts</p>
                 </div>
                 <Link
                     href="/admin/blogs/new"
-                    className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                    className="flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-medium px-6 py-3 rounded-lg transition-colors w-full md:w-auto"
                 >
                     <Plus size={20} />
                     New Blog
@@ -154,8 +154,8 @@ export default function BlogsManagementPage() {
                                         <td className="px-6 py-4">
                                             <span
                                                 className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${blog.published
-                                                        ? 'bg-green-100 text-green-800'
-                                                        : 'bg-gray-100 text-gray-800'
+                                                    ? 'bg-green-100 text-green-800'
+                                                    : 'bg-gray-100 text-gray-800'
                                                     }`}
                                             >
                                                 {blog.published ? 'Published' : 'Draft'}

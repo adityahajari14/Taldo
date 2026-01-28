@@ -39,8 +39,8 @@ export default function AdminLoginPage() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-            <div className="w-full max-w-md">
-                <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="w-full max-w-md px-4">
+                <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>

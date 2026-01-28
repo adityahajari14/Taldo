@@ -24,7 +24,7 @@ export default function EditLiveWebinarPage({ params }: { params: { id: string }
     if (!webinar) return <div className="p-8">Webinar not found</div>;
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Event</h1>
                 <p className="text-gray-600">Update event details.</p>

@@ -113,11 +113,11 @@ export default function ProgramOverview() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20 py-12 md:py-16 lg:py-20">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20 pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20">
         {/* Header Section */}
         <div className="mb-8 md:mb-10 max-w-4xl mx-auto lg:mx-0 text-center lg:text-left">
           <h2 className="mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-white">
-            Taldo’s <span className="text-blue-900">Gateway to Germany Program</span>
+            Taldo’s <span className="text-yellow-300">Gateway to Germany</span> Program
           </h2>
           <p className="mb-4 md:mb-6 text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
             A structured, end-to-end program designed for Indian nurses who want to build successful careers in Germany.
@@ -157,11 +157,11 @@ export default function ProgramOverview() {
         </div>
 
         <div className="max-w-3xl mt-10 md:mt-10 mx-auto lg:mx-0 text-center lg:text-left">
-          
+
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
             We support you until you settle into your new life in Germany.
           </p>
-          
+
         </div>
 
       </div>

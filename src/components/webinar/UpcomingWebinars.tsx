@@ -43,7 +43,7 @@ export default function UpcomingWebinars() {
     }
 
     return (
-        <section className="w-full bg-gray-50 py-12 md:py-16 lg:py-20">
+        <section className="w-full bg-gray-50 pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20">
             <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20">
 
                 {/* Section Header */}

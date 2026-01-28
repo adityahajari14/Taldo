@@ -13,12 +13,12 @@ export default function Home() {
     <main className="flex w-full flex-col">
       <Hero />
       <WhyGermany />
-      <StartCareer />
+      {/* <StartCareer /> */}
       <ProgramOverview />
-      <Testimonials/>
-      <SuccessStories/>
-      <UpcomingWebinars/>
-      <FAQ/>
+      <Testimonials />
+      <SuccessStories />
+      <UpcomingWebinars />
+      <FAQ />
       {/* <Webinar/> */}
     </main>
   );

@@ -136,11 +136,11 @@ export default function SettingsPage() {
 
     return (
         <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Settings</h1>
                 <button
                     onClick={handleLogout}
-                    className="flex items-center gap-2 px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors text-sm font-medium"
+                    className="flex items-center justify-center gap-2 px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors text-sm font-medium w-full sm:w-auto"
                 >
                     <LogOut size={16} />
                     Logout

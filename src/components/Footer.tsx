@@ -22,8 +22,8 @@ const footerColumns = [
       {
         title: "RESOURCES",
         links: [
-          { name: "Enquire Now", href: "/#contact" },
-          { name: "Success Stories", href: "/#success-stories" },
+          { name: "Blog", href: "/blog" },
+          { name: "Webinar", href: "/webinar" },
         ],
       },
     ],
@@ -47,7 +47,7 @@ const socialLinks = [
     name: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61580703027757#",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
     ),
@@ -56,7 +56,7 @@ const socialLinks = [
     name: "Instagram",
     href: "https://www.instagram.com/taldocareers/",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="1" width="22" height="22" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -68,8 +68,7 @@ const socialLinks = [
     href: "https://www.youtube.com/@TaldoCareers",
     icon: (
       <svg
-        width="24"
-        height="24"
+        className="w-5 h-5"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -87,7 +86,7 @@ const socialLinks = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/taldocareers/",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect x="2" y="9" width="4" height="12" />
         <circle cx="4" cy="4" r="2" />
@@ -103,7 +102,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20 pt-12 md:pt-16 lg:pt-20 pb-6 md:pb-8">
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 lg:gap-12">
           {/* Logo */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="shrink-0 lg:w-1/5">
               <Link href="/">
                 <Image
@@ -116,6 +115,21 @@ export default function Footer() {
               </Link>
             </div>
             <p className="mt-5"> Taldo is a transparent and ethical career accelerator for professionals pursuing global careers</p>
+            {/* Social Links */}
+            <div className="flex items-center gap-6 md:gap-10 mt-5">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-text transition-colors hover:text-primary"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Navigation Columns */}
@@ -150,28 +164,10 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20 py-6 md:py-8">
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4">
-          {/* Copyright */}
-          <p className="text-xs md:text-sm text-gray-text text-center sm:text-left">
-            ©2025 Taldo. All rights reserved
-          </p>
-
-          {/* Social Links */}
-          <div className="flex items-center gap-6 md:gap-10">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-text transition-colors hover:text-primary"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </Link>
-            ))}
-          </div>
-        </div>
+        {/* Copyright */}
+        <p className="text-xs md:text-sm text-gray-text text-center">
+          ©2025 Taldo. All rights reserved
+        </p>
       </div>
     </footer>
   );

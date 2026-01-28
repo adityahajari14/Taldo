@@ -284,20 +284,20 @@ export default function BlogForm({ initialData, blogId, mode }: BlogFormProps) {
 
             {/* Content Builder */}
             <div className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <h3 className="text-lg font-bold text-gray-900">Content Blocks</h3>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 w-full sm:w-auto">
                         <button
                             type="button"
                             onClick={() => addBlock('paragraph')}
-                            className="px-3 py-1.5 text-sm bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 text-gray-700 font-medium flex items-center gap-1.5 transition-colors"
+                            className="flex-1 sm:flex-none px-3 py-1.5 text-sm bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 text-gray-700 font-medium flex items-center justify-center gap-1.5 transition-colors"
                         >
                             <span className="text-lg leading-none">+</span> Paragraph
                         </button>
                         <button
                             type="button"
                             onClick={() => addBlock('list')}
-                            className="px-3 py-1.5 text-sm bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 text-gray-700 font-medium flex items-center gap-1.5 transition-colors"
+                            className="flex-1 sm:flex-none px-3 py-1.5 text-sm bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 text-gray-700 font-medium flex items-center justify-center gap-1.5 transition-colors"
                         >
                             <span className="text-lg leading-none">+</span> List
                         </button>
@@ -306,9 +306,9 @@ export default function BlogForm({ initialData, blogId, mode }: BlogFormProps) {
 
                 <div className="space-y-4">
                     {formData.content.map((block, index) => (
-                        <div key={block.id} className="relative group bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-gray-200 transition-all">
-                            {/* Block Controls */}
-                            <div className="absolute right-4 top-4 flex items-center gap-1 opacity-100 transition-opacity">
+                        <div key={block.id} className="relative group bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 hover:border-gray-200 transition-all">
+                            {/* Block Controls - Responsive */}
+                            <div className="flex md:absolute md:right-4 md:top-4 items-center justify-end gap-1 opacity-100 transition-opacity mb-4 md:mb-0">
                                 <button
                                     type="button"
                                     onClick={() => moveBlock(index, 'up')}
@@ -338,7 +338,7 @@ export default function BlogForm({ initialData, blogId, mode }: BlogFormProps) {
                             </div>
 
                             {/* Block Content */}
-                            <div className="mt-6 first:mt-2">
+                            <div className="mt-0 md:mt-6 first:mt-2">
                                 {block.type === 'paragraph' ? (
                                     <div>
                                         <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block">Paragraph</span>
@@ -395,7 +395,7 @@ export default function BlogForm({ initialData, blogId, mode }: BlogFormProps) {
             </div>
 
             {/* Footer Actions */}
-            <div className="sticky bottom-4 z-10 bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-lg border border-gray-100 flex items-center justify-between">
+            <div className="sticky bottom-4 z-10 bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-lg border border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-2">
                         <input
@@ -410,18 +410,18 @@ export default function BlogForm({ initialData, blogId, mode }: BlogFormProps) {
                         </label>
                     </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 w-full sm:w-auto">
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="px-6 py-2.5 text-sm font-semibold text-gray-600 hover:text-gray-800"
+                        className="flex-1 sm:flex-none px-6 py-2.5 text-sm font-semibold text-gray-600 hover:text-gray-800"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={saving || uploading}
-                        className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-2.5 rounded-lg transition-colors disabled:opacity-70 disabled:cursor-not-allowed text-sm shadow-md shadow-accent/20"
+                        className="flex-1 sm:flex-none bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-2.5 rounded-lg transition-colors disabled:opacity-70 disabled:cursor-not-allowed text-sm shadow-md shadow-accent/20"
                     >
                         {saving ? 'Saving...' : mode === 'create' ? 'Create Post' : 'Save Changes'}
                     </button>

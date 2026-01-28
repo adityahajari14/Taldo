@@ -39,11 +39,11 @@ export default function AdminDashboard() {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             {/* Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
-                <p className="text-gray-600">Welcome to the Taldo admin panel</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
+                <p className="text-sm md:text-base text-gray-600">Welcome to the Taldo admin panel</p>
             </div>
 
             {/* Stats Cards */}

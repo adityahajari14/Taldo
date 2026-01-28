@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface LiveWebinar {
     id?: string;
@@ -36,6 +37,30 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
             ...prev,
             [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
         }));
+    };
+
+    const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        if (!file.type.startsWith('image/')) {
+            setError('Please select an image file');
+            return;
+        }
+
+        // STRICTER SIZE LIMIT for Database Storage (e.g. 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            setError('Image must be less than 5MB for database storage');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            const base64String = reader.result as string;
+            setFormData(prev => ({ ...prev, image: base64String }));
+            setError('');
+        };
+        reader.readAsDataURL(file);
     };
 
     const handleSubmit = async (e: FormEvent) => {
@@ -105,17 +130,23 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
                     />
                 </div>
 
-                {/* Image URL */}
+                {/* Image Upload */}
                 <div>
-                    <label className="block text-sm font-bold text-gray-900 mb-2">Image URL</label>
-                    <input
-                        type="text"
-                        name="image"
-                        value={formData.image}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                        required
-                    />
+                    <label className="block text-sm font-bold text-gray-900 mb-2">Featured Image *</label>
+                    <div className="space-y-3">
+                        {formData.image && (
+                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                                <Image src={formData.image} alt="Preview" fill className="object-cover" />
+                            </div>
+                        )}
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100 cursor-pointer"
+                        />
+                        <p className="text-xs text-gray-500">Max size: 5MB</p>
+                    </div>
                 </div>
 
                 {/* Link - Optional */}
@@ -145,18 +176,18 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-6 border-t border-gray-200">
                     <button
                         type="submit"
                         disabled={saving}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50"
+                        className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors disabled:opacity-50"
                     >
                         {saving ? 'Saving...' : mode === 'create' ? 'Create Event' : 'Save Changes'}
                     </button>
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="text-gray-600 hover:text-gray-900 font-semibold px-6 py-3"
+                        className="w-full sm:w-auto text-gray-600 hover:text-gray-900 font-semibold px-6 py-3 text-center"
                     >
                         Cancel
                     </button>

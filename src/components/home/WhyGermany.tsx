@@ -55,46 +55,46 @@ const benefits = [
     description: "Regulated 38–40 hour workweeks",
   },
   {
-  icon: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-      fill="none"
-    >
-      {/* Coin outline */}
-      <circle
-        cx="20"
-        cy="20"
-        r="13"
-        stroke="#233CC5"
-        strokeWidth="2"
-      />
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+      >
+        {/* Coin outline */}
+        <circle
+          cx="20"
+          cy="20"
+          r="13"
+          stroke="#233CC5"
+          strokeWidth="2"
+        />
 
-      {/* Inner ring */}
-      <circle
-        cx="20"
-        cy="20"
-        r="8"
-        stroke="#233CC5"
-        strokeWidth="2"
-        opacity="0.4"
-      />
+        {/* Inner ring */}
+        <circle
+          cx="20"
+          cy="20"
+          r="8"
+          stroke="#233CC5"
+          strokeWidth="2"
+          opacity="0.4"
+        />
 
-      {/* Rupee symbol */}
-      <path
-        d="M17 14H23M17 18H23M17 14C21 14 21 18 17 18L23 26"
-        stroke="#233CC5"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
-  title: "Paid Overtime",
-  description: "Get paid INR 1500+ / hour for overtime",
-},
+        {/* Rupee symbol */}
+        <path
+          d="M17 14H23M17 18H23M17 14C21 14 21 18 17 18L23 26"
+          stroke="#233CC5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "Paid Overtime",
+    description: "Get paid INR 1500+ / hour for overtime",
+  },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -138,7 +138,7 @@ const benefits = [
 
 export default function WhyGermany() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 lg:py-20">
+    <section className="w-full bg-white pb-12 md:pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20">
         {/* Section Header */}
         <div className="mb-8 md:mb-10 flex flex-col gap-3 md:gap-4 text-center md:text-left">

@@ -60,16 +60,16 @@ export default function LiveWebinarsManagementPage() {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Live Examples/Events</h1>
-                    <p className="text-gray-600">Manage upcoming webinars and events</p>
+                    <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Live Examples/Events</h1>
+                    <p className="text-sm md:text-base text-gray-600">Manage upcoming webinars and events</p>
                 </div>
                 <Link
                     href="/admin/live-webinars/new"
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                    className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors w-full md:w-auto"
                 >
                     <Plus size={20} />
                     New Event

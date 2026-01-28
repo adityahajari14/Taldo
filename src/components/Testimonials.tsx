@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import MuxPlayer from "@mux/mux-player-react";
 
 const testimonials = [
@@ -23,6 +23,8 @@ const testimonials = [
 
 export default function Testimonials() {
     const playersRef = useRef<any[]>([]);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const handlePlay = (currentIndex: number) => {
         playersRef.current.forEach((player, index) => {
@@ -32,8 +34,28 @@ export default function Testimonials() {
         });
     };
 
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const scrollLeft = scrollRef.current.scrollLeft;
+            const cardWidth = 300; // approximate width of each card
+            const newIndex = Math.round(scrollLeft / cardWidth);
+            setActiveIndex(Math.min(newIndex, testimonials.length - 1));
+        }
+    };
+
+    const scrollToIndex = (index: number) => {
+        if (scrollRef.current) {
+            const cardWidth = 300;
+            scrollRef.current.scrollTo({
+                left: index * cardWidth,
+                behavior: "smooth",
+            });
+            setActiveIndex(index);
+        }
+    };
+
     return (
-        <section id="testimonials" className="w-full bg-white py-6 md:py-8 lg:py-10 mb-15">
+        <section id="testimonials" className="w-full bg-white pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20">
             <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20">
 
                 <h2 className="mb-8 md:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-gray-900 text-center md:text-left">
@@ -41,15 +63,17 @@ export default function Testimonials() {
                 </h2>
 
                 <div className="relative">
-                    <div className="
-  flex gap-4 overflow-x-auto scrollbar-hide
-  md:grid md:grid-cols-3 md:gap-6 md:overflow-visible
-">
+                    <div
+                        ref={scrollRef}
+                        onScroll={handleScroll}
+                        className="flex gap-4 overflow-x-auto scrollbar-hide md:grid md:grid-cols-3 md:gap-6 md:overflow-visible"
+                    >
                         {testimonials.map((video, index) => (
                             <div
                                 key={index}
                                 className="flex flex-col items-center gap-2 shrink-0 w-[280px] sm:w-[300px] md:w-auto m-2 md:m-4"
-                            >                            <div className="relative aspect-[9/16] w-full max-w-[330px] overflow-hidden rounded-xl border border-gray-200">
+                            >
+                                <div className="relative aspect-[9/16] w-full max-w-[330px] overflow-hidden rounded-xl border border-gray-200">
                                     <MuxPlayer
                                         ref={(el) => {
                                             playersRef.current[index] = el;
@@ -71,6 +95,21 @@ export default function Testimonials() {
                                     </p>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+
+                    {/* Dot indicators - visible only on mobile */}
+                    <div className="flex justify-center gap-2 mt-6 md:hidden">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => scrollToIndex(index)}
+                                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeIndex === index
+                                        ? "bg-accent w-6"
+                                        : "bg-gray-300 hover:bg-gray-400"
+                                    }`}
+                                aria-label={`Go to testimonial ${index + 1}`}
+                            />
                         ))}
                     </div>
                 </div>

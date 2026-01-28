@@ -66,7 +66,7 @@ export default function SuccessStories() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-white py-12 md:py-16 lg:py-20" id="success-stories">
+    <section className="w-full overflow-hidden bg-white pb-12 md:pb-16 lg:pb-20" id="success-stories">
       {/* Header - contained */}
       <div className="mx-auto mb-6 md:mb-8 flex max-w-[1400px] items-center justify-center md:justify-between flex-col md:flex-row gap-4 px-4 sm:px-6 lg:px-20">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-gray-900 text-center md:text-left">
@@ -131,7 +131,8 @@ export default function SuccessStories() {
         onScroll={checkScrollability}
         className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide"
         style={{
-          paddingLeft: 'max(1rem, calc((100vw - 1400px) / 2 + 5rem))'
+          paddingLeft: "max(1.5rem, calc((100vw - 1400px) / 2 + 6rem))",
+          paddingRight: "max(1.5rem, calc((100vw - 1400px) / 2 + 5rem))",
         }}
       >
         {stories.map((story) => (
@@ -149,33 +150,31 @@ export default function SuccessStories() {
             />
           </div>
         ))}
-        {/* Right spacer */}
-        <div className="w-4 sm:w-6 lg:w-20 shrink-0" aria-hidden="true" />
       </div>
 
-      <div className="mt-8 md:mt-10 flex justify-end w-full pr-4 md:pr-8 lg:pr-28">
+      <div className="mt-8 md:mt-10 flex justify-center w-full">
 
-      {/* CTA Button */}
-          <Link
-            href="#contact"
-            className="flex w-fit mx-auto lg:mx-0 items-center gap-3 rounded-full bg-accent px-5 md:px-6 py-3 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:bg-primary-dark hover:shadow-lg"
+        {/* CTA Button */}
+        <Link
+          href="#contact"
+          className="flex w-fit mx-auto lg:mx-0 items-center gap-3 rounded-full bg-accent px-5 md:px-6 py-3 md:py-4 text-sm md:text-base font-medium text-white transition-all hover:bg-primary-dark hover:shadow-lg"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-            Book your free consultation now
-          </Link>
-</div>
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+          Book your free consultation now
+        </Link>
+      </div>
     </section>
   );
 }

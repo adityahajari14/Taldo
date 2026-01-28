@@ -55,18 +55,18 @@ export default function Team() {
 
                                 {/* Text Content */}
                                 <div className="flex flex-col gap-2 flex-1">
-                                    <h3 className="font-semibold text-xl md:text-2xl leading-tight tracking-tight text-gray-900">
-                                        {member.name}
-                                    </h3>
-                                    <p className="font-normal text-base md:text-lg lg:text-lg leading-relaxed tracking-tight text-gray-900">
-                                        {member.description}
-                                    </p>
-                                    <div className="flex justify-center sm:justify-start mt-2">
+                                    <div className="flex items-center gap-2 justify-center sm:justify-start">
+                                        <h3 className="font-semibold text-xl md:text-2xl leading-tight tracking-tight text-gray-900">
+                                            {member.name}
+                                        </h3>
                                         <Icon
-                                            className="w-6 h-6 cursor-pointer text-black/80 hover:text-black transition"
+                                            className="w-5 h-5 cursor-pointer text-gray-600 hover:text-black transition"
                                             onClick={() => window.open(member.link, "_blank")}
                                         />
                                     </div>
+                                    <p className="font-normal text-base md:text-lg lg:text-lg leading-relaxed tracking-tight text-gray-900">
+                                        {member.description}
+                                    </p>
 
                                 </div>
                             </div>

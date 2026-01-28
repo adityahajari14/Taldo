@@ -58,7 +58,7 @@ export default async function BlogListingPage() {
             </section>
 
             {/* Newsletter Section */}
-            <Newsletter />
+            {/* <Newsletter /> */}
         </main>
     );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white pb-12 md:pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-20">
         {/* Hero Container with rounded corners */}
         <div className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden rounded-2xl lg:rounded-3xl bg-primary-light px-6 sm:px-8 lg:px-10">
@@ -21,26 +21,26 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-4 sm:mt-6">
 
-            {/* CTA Button */}
-            <Link
-              href="#contact"
-              className="flex w-fit items-center gap-3 rounded-full bg-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-medium text-gray-900 transition-all hover:bg-white/90 hover:shadow-lg"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              {/* CTA Button */}
+              <Link
+                href="#contact"
+                className="flex w-fit items-center gap-3 rounded-full bg-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-md font-medium text-gray-900 transition-all hover:bg-white/90 hover:shadow-lg"
               >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-              Book your free consultation now
-            </Link>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+                Book your free consultation
+              </Link>
 
             </div>
           </div>

@@ -65,7 +65,7 @@ export default function EditBlogPage() {
     }
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Blog</h1>
                 <p className="text-gray-600">Update your blog post</p>
