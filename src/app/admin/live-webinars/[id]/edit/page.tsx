@@ -1,14 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import LiveWebinarForm from '@/components/admin/LiveWebinarForm';
 
-export default function EditLiveWebinarPage({ params }: { params: { id: string } }) {
+export default function EditLiveWebinarPage() {
+    const params = useParams();
+    const webinarId = params.id as string;
     const [webinar, setWebinar] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`/api/live-webinars/${params.id}`)
+        if (!webinarId) return;
+
+        fetch(`/api/live-webinars/${webinarId}`)
             .then(res => res.json())
             .then(data => {
                 setWebinar(data);
@@ -18,7 +23,7 @@ export default function EditLiveWebinarPage({ params }: { params: { id: string }
                 console.error(err);
                 setLoading(false);
             });
-    }, [params.id]);
+    }, [webinarId]);
 
     if (loading) return <div className="p-8">Loading...</div>;
     if (!webinar) return <div className="p-8">Webinar not found</div>;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -30,6 +30,19 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
         link: initialData?.link || '',
         published: initialData?.published ?? true,
     });
+
+    // Sync with initialData changes
+    useEffect(() => {
+        if (initialData) {
+            setFormData({
+                title: initialData.title || '',
+                date: initialData.date ? new Date(initialData.date).toISOString().slice(0, 16) : '',
+                image: initialData.image || '',
+                link: initialData.link || '',
+                published: initialData.published ?? true,
+            });
+        }
+    }, [initialData]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
@@ -68,6 +81,13 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
         setError('');
         setSaving(true);
 
+        // Set default link if empty
+        const submissionData = {
+            ...formData,
+            link: formData.link || 'https://taldo.co',
+            date: new Date(formData.date).toISOString(),
+        };
+
         try {
             const url = mode === 'create' ? '/api/live-webinars' : `/api/live-webinars/${initialData?.id}`;
             const method = mode === 'create' ? 'POST' : 'PUT';
@@ -75,10 +95,7 @@ export default function LiveWebinarForm({ initialData, mode }: LiveWebinarFormPr
             const response = await fetch(url, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ...formData,
-                    date: new Date(formData.date).toISOString(), // Convert back to ISO for API
-                }),
+                body: JSON.stringify(submissionData),
             });
 
             if (response.ok) {
