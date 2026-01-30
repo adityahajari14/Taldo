@@ -145,7 +145,7 @@ export default function AdminLayout({
                         <span className="font-medium">Blogs</span>
                     </Link>
 
-                    <Link
+                    {/* <Link
                         href="/admin/webinars"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${pathname.startsWith('/admin/webinars')
@@ -155,7 +155,7 @@ export default function AdminLayout({
                     >
                         <Video size={20} />
                         <span className="font-medium">Webinars</span>
-                    </Link>
+                    </Link> */}
 
                     <Link
                         href="/admin/live-webinars"

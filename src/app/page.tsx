@@ -16,7 +16,7 @@ export default function Home() {
       {/* <StartCareer /> */}
       <ProgramOverview />
       <Testimonials />
-      <SuccessStories />
+      {/* <SuccessStories /> */}
       <UpcomingWebinars />
       <FAQ />
       {/* <Webinar/> */}
